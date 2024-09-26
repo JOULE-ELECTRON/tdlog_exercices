@@ -23,7 +23,7 @@ finale, le client obtient la totalité de son produit.
 
 Format des données
 
-Entrée
+entrée
 Ligne 1 : un entier N correspondant au nombre de sprints(réunion).
 Ligne 2 : un entier T correspondant au nombre de taches dans le « backlog »
         initial.
@@ -39,5 +39,15 @@ La chaîne OK si le backlog est vide. Sinon retourner la chaîne KO.
 
 
 def processLines(lines) -> str:
-    # Implementer votre réponse ici
-    return "OK"
+    # Lecture des données
+    N = int(lines[0])  # Nombre de sprints
+    T = int(lines[1])  # Nombre initial de tâches dans le backlog
+    
+    # Parcourir les lignes de sprints pour mettre à jour le backlog
+    for i in range(2, 2 + N):
+        V, U = map(int, lines[i].split())  # Lecture des tâches validées (V) et modification du backlog (U)
+        T -= V  # Valider les tâches (réduire le nombre de tâches)
+        T += U  # Ajouter ou retirer les tâches en fonction de U (peut être positif ou négatif)
+
+    # Si le backlog est vide (T = 0), retourner OK, sinon KO
+    return "OK" if T == 0 else "KO"
