@@ -9,14 +9,14 @@ Example of code using the class: i = Item(10, 20)
 """
 
 
-Class Item :
-    def__init__(self, price: int, weight: int):
-        self.price= price
-        self.weight= weight
+class Item:
+    def __init__(self, price: int, weight: int):
+        self.price = price
+        self.weight = weight
+
 
 #Exemple
 
 i = Item(10, 20)
 
 print(f"Price: {i.price}, Weight: {i.weight}")
-
