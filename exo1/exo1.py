@@ -8,21 +8,14 @@ A new item can be created with Item(price, weight)
 Example of code using the class: i = Item(10, 20)
 """
 
-Class Prediction :
+Class Item :
     def__init__(self, price: int, weight: int):
         self.price= price
         self.weight= weight
 
 #Exemple
 
-i = Prediction(10, 20)
+i = Item(10, 20)
 
 print(f"Price: {i.price}, Weight: {i.weight}")
-
-
-
-
-
-
-
 
